@@ -7,9 +7,6 @@ def layout_main():
                 [sg.Frame('Sexo', layout=[
                         [sg.Checkbox('Masculino', key='-MASCULINO-'), sg.Checkbox('Feminino', key='-FEMININO-')],
                 ])],
-                # [sg.Frame('Idade', layout=[
-                #         [sg.Input(key='-INPUT_IDADE-', size=(6, 1))],
-                # ])],
                 [sg.Frame('Altura', layout=[
                         [sg.Input(key='-INPUT_ALTURA-', size=(6, 1)), sg.Text('cm')],
                 ])],

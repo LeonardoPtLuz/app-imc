@@ -9,7 +9,6 @@ def logica():
     while True:
         event, values = window.read()
 
-
         if event == sg.WINDOW_CLOSED or event == 'Sair':
             break
         
@@ -37,7 +36,6 @@ def logica():
                 print(er)
             
         elif event == 'Resetar':
-            window['-INPUT_IDADE-'].update('')
             window['-INPUT_ALTURA-'].update('')
             window['-INPUT_PESO-'].update('')
             window['-MASCULINO-'].update('')
