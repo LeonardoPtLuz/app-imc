@@ -17,11 +17,11 @@ def logica():
                 if values['-MASCULINO-'] and values['-FEMININO-']:
                     window['-IMC_OUTPUT-'].update('Apenas um sexo por vez!', text_color='red')   
                     
-                elif values['-MASCULINO-'] and (not values['-INPUT_PESO-'] or not values['-INPUT_ALTURA-']):
-                    window['-IMC_OUTPUT-'].update('Faltam informações do sexo masculino!', text_color='red')
+                elif values['-MASCULINO-'] or values['-FEMININO-'] and (not values['-INPUT_PESO-'] or not values['-INPUT_ALTURA-']):
+                    window['-IMC_OUTPUT-'].update('Faltam informações sobre peso ou altura!', text_color='red')
 
-                elif values['-FEMININO-'] and (not values['-INPUT_PESO-'] or not values['-INPUT_ALTURA-']):
-                    window['-IMC_OUTPUT-'].update('Faltam informaçoes do sexo feminino!', text_color='red')
+                elif values['-INPUT_PESO-'] or values['-INPUT_ALTURA-'] and (not values['-MASCULINO-'] or not values['-FEMININO-']):
+                    window['-IMC_OUTPUT-'].update('Selecione algum dos sexos acima!', text_color='red')
 
                 elif values['-MASCULINO-']:
                     imc_result = imc_masculino(float(values['-INPUT_PESO-']), float(values['-INPUT_ALTURA-']))
@@ -32,7 +32,6 @@ def logica():
                     window['-IMC_OUTPUT-'].update(imc_result, text_color='green')
             
             except TypeError as er:
-                #window['-IMC_OUTPUT-'].update(er)
                 print(er)
             
         elif event == 'Resetar':
